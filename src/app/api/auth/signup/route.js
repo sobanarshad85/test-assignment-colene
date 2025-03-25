@@ -27,7 +27,8 @@ export async function POST(req) {
 
         return NextResponse.json(apiResponse(201, 'user registered successfully', false, data))
 
-    } catch {
-        return NextResponse.json(apiResponse(500, 'internal server error', true))
+    } catch (error) {
+        console.log(error)
+        return NextResponse.json(apiResponse(500, 'internel server error', true))
     }
 }

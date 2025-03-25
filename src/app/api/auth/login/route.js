@@ -30,7 +30,8 @@ export async function POST(req) {
 
         return NextResponse.json(apiResponse(200, 'Login successfull', false, data))
 
-    } catch {
+    } catch (error){
+        console.log(error)
         return NextResponse.json(apiResponse(500, 'internel server error', true))
     }
 }
